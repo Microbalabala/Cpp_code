@@ -3,7 +3,15 @@
 //对学生增删改查的操作
 #include <iostream>
 using namespace std;
+#include "CStudent.h"
+#include "Monitor.h"
 #include "Student.h"
+#include "StudyCommissioner.h"
+#include "TuanZhishu.h"
+#include "Counsellor.h"
+#include "CTeacher.h"
+#include "Teacher.h"
+#include <vector>
 
 
 class StudentManager
@@ -20,6 +28,12 @@ public:
 
 	//判断身份证号是否合法
 	bool Check_Sid(string id);
+
+	//增加老师
+	void Add_Teacher();
+
+	//显示老师
+	void Show_Teacher();
 
 	//增加学生
 	void Add_Stu();
@@ -49,12 +63,20 @@ public:
 	//析构函数
 	~StudentManager();
 
-private:
+
+	//用户在批量创建时，可能会创建不同种类的学生
+	//如果想将所有不同种类的学生都放入到一个数组中，可以将所有学生的指针维护到一个数组里
+	//如果想在程序中维护这个不定长度的数组，可以将数组创建到堆区，并利用CStudent** 的指针维护
+	
 	//记录人数个数
 	int m_StuNum;
 
 	//学生数组的指针
-	Student** m_StuArray;
+	CStudent** m_StuArray;
 
+	int m_TeacherNum;
+
+	//老师数组的指针
+	CTeacher** m_TeacherArray;
 };
 

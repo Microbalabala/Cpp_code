@@ -7,6 +7,10 @@ StudentManager::StudentManager()
 	this->m_StuNum = 0;
 	//初始化数组指针
 	this->m_StuArray = NULL;
+
+	this->m_TeacherNum = 2;
+
+	this->m_TeacherArray = NULL;
 }
 
 void StudentManager::show_Menu()
@@ -21,6 +25,7 @@ void StudentManager::show_Menu()
 	cout << "*********** 5.查找学生信息 ***********" << endl;
 	cout << "*********** 6.按照学号排序 ***********" << endl;
 	cout << "*********** 7.清空所有文档 ***********" << endl;
+	cout << "*********** 8.显示老师信息 ***********" << endl;
 	cout << "**************************************" << endl;
 	cout << endl;
 }
@@ -53,6 +58,19 @@ bool StudentManager::Check_Sid(string id)
 	return false;
 }
 
+void StudentManager::Show_Teacher()
+{
+	CTeacher* counsellor = new Counsellor("刘皓月");
+	CTeacher* teacher = new Teacher("张劲峰");
+	m_TeacherArray = new CTeacher * [m_TeacherNum];
+	m_TeacherArray[0] = counsellor;
+	m_TeacherArray[1] = teacher;
+	this->m_TeacherArray[0]->showInfo();
+	this->m_TeacherArray[1]->showInfo();
+	system("pause");
+	system("cls");
+}
+
 void StudentManager::Add_Stu()
 {
 	cout << "请输入增加学生数量：" << endl;
@@ -66,7 +84,7 @@ void StudentManager::Add_Stu()
 		int newSize = this->m_StuNum + addNum;
 
 		//开辟新空间
-		Student** newSpace = new Student * [newSize];
+		CStudent** newSpace = new CStudent * [newSize];
 
 		//将原空间下的内容存放到新空间
 		if (this->m_StuArray != NULL)
@@ -86,6 +104,9 @@ void StudentManager::Add_Stu()
 			string id;
 			string sid;
 			string atime;
+			int DId;
+
+			int option;
 
 			cout << "请输入第 " << i + 1 << " 个学生姓名" << endl;
 			cin >> name;
@@ -108,8 +129,33 @@ void StudentManager::Add_Stu()
 			cout << "请输入第 " << i + 1 << " 个学生入学时间" << endl;
 			cin >> atime;
 
-			Student* student = new Student(name, age, sex, id, sid, atime);
-			newSpace[this->m_StuNum + i] = student;
+			cout << "请选择学生身份: " << endl;
+			cout << "1、班长" << endl;
+			cout << "2、学习委员" << endl;
+			cout << "3、团支书" << endl;
+			cout << "4、普通学生" << endl;
+			cin >> option;
+
+			CStudent* stu = NULL;
+			switch (option)
+			{
+			case 1:
+				stu = new Monitor(name, age, sex, id, sid, atime, 1);
+				break;
+			case 2:
+				stu = new StudyCommissioner(name, age, sex, id, sid, atime, 2);
+				break;
+			case 3:
+				stu = new TuanZhishu(name, age, sex, id, sid, atime, 3);
+				break;
+			case 4:
+				stu = new Student(name, age, sex, id, sid, atime, 4);
+				break;
+			default:
+				break;
+			}
+			
+			newSpace[this->m_StuNum + i] = stu;
 		}
 		//释放原有空间
 		delete[] this->m_StuArray;
@@ -215,22 +261,46 @@ void StudentManager::Mod_Stu()
 			string newid;
 			string newsid;
 			string newatime;
+			int newDId;
+
+			int option;
 
 			cout << "查到： 第" << id << "号学生，请输入新学号： " << endl;
 			cin >> newsid;
-			cout << "请输入新姓名" << endl;
+			cout << "请输入新姓名: " << endl;
 			cin >> newname;
-			cout << "请输入新年龄" << endl;
+			cout << "请输入新年龄: " << endl;
 			cin >> newage;
-			cout << "请输入新性别" << endl;
+			cout << "请输入新性别: " << endl;
 			cin >> newsex;
-			cout << "请输入新身份证号" << endl;
+			cout << "请输入新身份证号: " << endl;
 			cin >> newid;
-			cout << "请输入新入学时间" << endl;
+			cout << "请输入新入学时间: " << endl;
 			cin >> newatime;
+			cout << "请输入新身份: " << endl;
 
-			Student* student = new Student(newname, newage, newsex, newid, newsid, newatime);
-			this->m_StuArray[index] = student;
+			cout << "1、班长" << endl;
+			cout << "2、学习委员" << endl;
+			cout << "3、团支书" << endl;
+			cout << "4、普通学生" << endl;
+			cin >> option;
+			CStudent* stu = NULL;
+			switch (option)
+			{
+			case 1:
+				stu = new Monitor(newname, newage, newsex, newid, newsid, newatime, 1);
+				break;
+			case 2:
+				stu = new StudyCommissioner(newname, newage, newsex, newid, newsid, newatime, 2);
+			case 3:
+				stu = new TuanZhishu(newname, newage, newsex, newid, newsid, newatime, 3);
+			case 4:
+				stu = new Student(newname, newage, newsex, newid, newsid, newatime, 4);
+			default:
+				break;
+			}
+
+			this->m_StuArray[index] = stu;
 			cout << "修改成功！" << endl;
 		}
 		else
@@ -349,7 +419,7 @@ void StudentManager::Sort_Stu()
 			//判断一开始认定 最小值或最大值 是不是 计算的最小值或最大值，如果不是 交换数据
 			if (i != minOrMax)
 			{
-				Student* temp = m_StuArray[i];
+				CStudent* temp = m_StuArray[i];
 				m_StuArray[i] = m_StuArray[minOrMax];
 				m_StuArray[minOrMax] = temp;
 			}

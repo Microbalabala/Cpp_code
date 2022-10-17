@@ -127,13 +127,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Counsellor.cpp" />
+    <ClCompile Include="Monitor.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentManager.cpp" />
+    <ClCompile Include="StudyCommissioner.cpp" />
+    <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="TuanZhishu.cpp" />
     <ClCompile Include="班级管理系统.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Counsellor.h" />
+    <ClInclude Include="CTeacher.h" />
+    <ClInclude Include="Monitor.h" />
+    <ClInclude Include="CStudent.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentManager.h" />
+    <ClInclude Include="StudyCommissioner.h" />
+    <ClInclude Include="Teacher.h" />
+    <ClInclude Include="TuanZhishu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram21.cd" />
+    <None Include="ClassDiagram22.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

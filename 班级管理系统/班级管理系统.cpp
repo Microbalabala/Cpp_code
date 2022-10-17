@@ -40,6 +40,9 @@ int main()
 		case 7://Çå¿ÕÎÄµµ
 			sm.Clear_File();
 			break;
+		case 8:
+			sm.Show_Teacher();
+			break;
 		default:
 			system("cls");
 			break;

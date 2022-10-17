@@ -1,26 +1,19 @@
 #pragma once
+#include "CStudent.h"
 #include <iostream>
-using namespace std;
 #include <string>
+using namespace std;
 
-class Student
+class Student:public CStudent
 {
-	friend class StudentManager;
-
 public:
-
 	//构造函数
-	Student(string name, int age, string sex, string id, string sid, string atime);
+	Student(string name, int age, string sex, string id, string sid, string atime, int DId);
 
 	//显示个人信息
-	void showInfo();
+	virtual void showInfo();
 
-private:
-	string m_Name;
-	int m_Age;
-	string m_Sex;
-	string m_ID;
-	string m_StudentID;
-	string m_AdmissionTime;
+	//获取身份
+	virtual string getDeptName();
 };
 

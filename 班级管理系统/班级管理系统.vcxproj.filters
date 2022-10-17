@@ -21,7 +21,22 @@
     <ClCompile Include="StudentManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Monitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StudyCommissioner.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TuanZhishu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="Student.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Counsellor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Teacher.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,8 +44,34 @@
     <ClInclude Include="StudentManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CStudent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Monitor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StudyCommissioner.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TuanZhishu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="Student.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CTeacher.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Counsellor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Teacher.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram21.cd" />
+    <None Include="ClassDiagram22.cd" />
   </ItemGroup>
 </Project>
