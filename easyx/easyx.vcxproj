@@ -128,6 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="位运算.cpp" />
+    <ClCompile Include="捕获按键.cpp" />
+    <ClCompile Include="数组.cpp" />
+    <ClCompile Include="鼠标控制及高级按键控制.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

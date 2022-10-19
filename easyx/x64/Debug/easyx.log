@@ -1,8 +1,2 @@
-﻿  test.cpp
-D:\code\Cpp_code\EasyX\test.cpp(347,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-D:\code\Cpp_code\EasyX\test.cpp(348,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-D:\code\Cpp_code\EasyX\test.cpp(349,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-D:\code\Cpp_code\EasyX\test.cpp(350,14): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-D:\code\Cpp_code\EasyX\test.cpp(351,15): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-D:\code\Cpp_code\EasyX\test.cpp(352,15): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+﻿  数组.cpp
   easyx.vcxproj -> D:\code\Cpp_code\easyx\x64\Debug\easyx.exe
