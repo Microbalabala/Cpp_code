@@ -129,8 +129,15 @@
   <ItemGroup>
     <ClCompile Include="test.cpp" />
     <ClCompile Include="位运算.cpp" />
+    <ClCompile Include="位运算实现颜色分离.cpp" />
+    <ClCompile Include="图像处理.cpp" />
+    <ClCompile Include="字符阵.cpp" />
+    <ClCompile Include="彩虹.cpp" />
     <ClCompile Include="捕获按键.cpp" />
     <ClCompile Include="数组.cpp" />
+    <ClCompile Include="星空.cpp" />
+    <ClCompile Include="窗体句柄.cpp" />
+    <ClCompile Include="设置上下文句柄.cpp" />
     <ClCompile Include="鼠标控制及高级按键控制.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

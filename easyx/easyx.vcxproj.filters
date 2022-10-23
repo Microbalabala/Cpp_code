@@ -30,5 +30,26 @@
     <ClCompile Include="捕获按键.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="图像处理.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="位运算实现颜色分离.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="窗体句柄.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="设置上下文句柄.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="字符阵.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="星空.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="彩虹.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
