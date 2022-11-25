@@ -1,5 +1,5 @@
-#include <graphics.h>
-#include <conio.h>
+//#include <graphics.h>
+//#include <conio.h>
 
 
 //╪стьм╪ф╛

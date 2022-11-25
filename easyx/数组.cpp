@@ -1,8 +1,8 @@
-#include <graphics.h>
-#include <conio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <iostream>
+//#include <graphics.h>
+//#include <conio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//#include <iostream>
 
 
 //Ò»Î¬Êý×é

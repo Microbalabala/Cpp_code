@@ -1,9 +1,9 @@
-#include <graphics.h>//绘图库头文件
-#include <conio.h>//控制台输入输出头文件，_getch()语句需要
-#include <math.h>
-#include <iostream>
-using namespace std;
-#define PI 3.14159265359
+//#include <graphics.h>//绘图库头文件
+//#include <conio.h>//控制台输入输出头文件，_getch()语句需要
+//#include <math.h>
+//#include <iostream>
+//using namespace std;
+//#define PI 3.14159265359
 //
 //int main()
 //{

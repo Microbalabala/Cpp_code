@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="HRGN.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="位运算.cpp" />
     <ClCompile Include="位运算实现颜色分离.cpp" />

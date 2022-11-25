@@ -1,6 +1,6 @@
-#include <graphics.h>
-#include <conio.h>
-#include <iostream>
+//#include <graphics.h>
+//#include <conio.h>
+//#include <iostream>
 
 
 //捕获按键,如果有按键，输出该按键，否则，输出".",按ESC退出

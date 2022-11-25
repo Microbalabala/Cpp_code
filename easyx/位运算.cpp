@@ -1,6 +1,6 @@
-#include <graphics.h>
-#include <conio.h>
-#include <math.h>
+//#include <graphics.h>
+//#include <conio.h>
+//#include <math.h>
 
 
 //XOR‘ÀÀ„

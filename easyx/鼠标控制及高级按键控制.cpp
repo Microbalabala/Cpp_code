@@ -1,4 +1,4 @@
-#include <graphics.h>
+//#include <graphics.h>
 
 //获取鼠标消息
 //ExMessage m;
