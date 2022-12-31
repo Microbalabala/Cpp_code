@@ -1,0 +1,7 @@
+﻿  Canvas.cpp
+D:\code\Cpp_code\绘制系统\Canvas.cpp(192,28): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+D:\code\Cpp_code\绘制系统\Canvas.cpp(248,35): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  Elliptic.cpp
+  test.cpp
+  正在生成代码...
+  绘制系统.vcxproj -> D:\code\Cpp_code\绘制系统\x64\Debug\绘制系统.exe
