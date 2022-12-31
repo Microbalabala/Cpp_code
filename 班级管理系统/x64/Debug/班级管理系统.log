@@ -1,1 +1,6 @@
-﻿  班级管理系统.vcxproj -> D:\code\Cpp_code\班级管理系统\x64\Debug\班级管理系统.exe
+﻿  StudentManager.cpp
+D:\code\Cpp_code\班级管理系统\StudentManager.cpp(144,8): warning C4101: “DId”: 未引用的局部变量
+D:\code\Cpp_code\班级管理系统\StudentManager.cpp(306,8): warning C4101: “newDId”: 未引用的局部变量
+  班级管理系统.cpp
+  正在生成代码...
+  班级管理系统.vcxproj -> D:\code\Cpp_code\班级管理系统\x64\Debug\班级管理系统.exe

@@ -69,9 +69,4 @@
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram2.cd" />
-    <None Include="ClassDiagram21.cd" />
-    <None Include="ClassDiagram22.cd" />
-  </ItemGroup>
 </Project>

@@ -12,10 +12,15 @@ using namespace std;
 #include "CTeacher.h"
 #include "Teacher.h"
 #include <vector>
+#include <fstream>
+#define FILENAME "stuFile.txt"
 
 
 class StudentManager
 {
+private:
+	bool m_FileIsEmpty; //标志文件是否为空
+
 public:
 	//构造函数
 	StudentManager();
@@ -59,6 +64,15 @@ public:
 
 	//清空文档
 	void Clear_File();
+
+	//保存文件
+	void save();
+
+	//统计人数
+	int get_StuNum();
+
+	//初始化学生
+	void init_Stu();
 
 	//析构函数
 	~StudentManager();

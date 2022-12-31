@@ -3,14 +3,51 @@
 
 StudentManager::StudentManager()
 {
-	//初始化人数
-	this->m_StuNum = 0;
-	//初始化数组指针
-	this->m_StuArray = NULL;
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
 
-	this->m_TeacherNum = 2;
+	//文件不存在
+	if (!ifs.is_open())
+	{
+		cout << "文件不存在" << endl;
+		//初始化人数
+		this->m_StuNum = 0;
+		this->m_FileIsEmpty = true;
+		//初始化数组指针
+		this->m_StuArray = NULL;
 
-	this->m_TeacherArray = NULL;
+		this->m_TeacherNum = 2;
+
+		this->m_TeacherArray = NULL;
+		ifs.close();
+		return;
+	}
+
+	//文件存在，但没有记录
+	char ch;
+	ifs >> ch;
+	if (ifs.eof())
+	{
+		cout << "文件为空" << endl;
+		//初始化人数
+		this->m_StuNum = 0;
+		this->m_FileIsEmpty = true;
+		//初始化数组指针
+		this->m_StuArray = NULL;
+
+		this->m_TeacherNum = 2;
+
+		this->m_TeacherArray = NULL;
+		ifs.close();
+		return;
+	}
+
+	int num = this->get_StuNum();
+	cout << "学生个数为: " << num << endl;
+	this->m_StuNum = num;
+
+	this->m_StuArray = new CStudent * [this->m_StuNum];
+	this->init_Stu();
 }
 
 void StudentManager::show_Menu()
@@ -166,7 +203,11 @@ void StudentManager::Add_Stu()
 		//更新个数
 		this->m_StuNum = newSize;
 
+		this->m_FileIsEmpty = false;
+
 		cout << "成功添加" << addNum << "名学生!" << endl;
+
+		this->save();
 	}
 	else
 	{
@@ -227,6 +268,7 @@ void StudentManager::Del_Stu()
 				this->m_StuArray[i] = this->m_StuArray[i + 1];
 			}
 			this->m_StuNum--;
+			this->save();
 			cout << "删除成功！" << endl;
 		}
 		else
@@ -302,6 +344,7 @@ void StudentManager::Mod_Stu()
 
 			this->m_StuArray[index] = stu;
 			cout << "修改成功！" << endl;
+			this->save();
 		}
 		else
 		{
@@ -425,6 +468,7 @@ void StudentManager::Sort_Stu()
 			}
 		}
 		cout << "排序成功,排序后结果为：" << endl;
+		this->save();
 		this->Show_Stu();
 	}
 }
@@ -452,11 +496,86 @@ void StudentManager::Clear_File()
 			this->m_StuNum = 0;
 			delete[] this->m_StuArray;
 			this->m_StuArray = NULL;
+			this->m_FileIsEmpty = true;
 		}
 		cout << "清空成功！" << endl;
 	}
 	system("pause");
 	system("cls");
+}
+
+void StudentManager::save()
+{
+	ofstream ofs;
+	ofs.open(FILENAME, ios::out);
+
+	for (int i = 0; i < this->m_StuNum; i++)
+	{
+		ofs << this->m_StuArray[i]->m_Name << " "
+			<< this->m_StuArray[i]->m_Age << " "
+			<< this->m_StuArray[i]->m_Sex << " "
+			<< this->m_StuArray[i]->m_ID << " "
+			<< this->m_StuArray[i]->m_StudentID << " "
+			<< this->m_StuArray[i]->m_AdmissionTime << " "
+			<< this->m_StuArray[i]->m_DeptId << endl;
+	}
+	ofs.close();
+}
+
+int StudentManager::get_StuNum()
+{
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
+	string m_Name;
+	int m_Age;
+	string m_Sex;
+	string m_ID;
+	string m_StudentID;
+	string m_AdmissionTime;
+	int m_DeptId;
+	int num = 0;
+	while (ifs >> m_Name && ifs >> m_Age && ifs >> m_Sex && ifs >> m_ID && ifs >> m_StudentID && ifs >> m_AdmissionTime && ifs >> m_DeptId)
+	{
+		num++;
+	}
+	ifs.close();
+	return num;
+}
+
+void StudentManager::init_Stu()
+{
+	ifstream ifs;
+	ifs.open(FILENAME, ios::in);
+	string m_Name;
+	int m_Age;
+	string m_Sex;
+	string m_ID;
+	string m_StudentID;
+	string m_AdmissionTime;
+	int m_DeptId;
+	int index = 0;
+	while (ifs >> m_Name && ifs >> m_Age && ifs >> m_Sex && ifs >> m_ID && ifs >> m_StudentID && ifs >> m_AdmissionTime && ifs >> m_DeptId)
+	{
+		CStudent* student = nullptr;
+		if (m_DeptId == 1)
+		{
+			student=new Monitor(m_Name, m_Age, m_Sex, m_ID, m_StudentID, m_AdmissionTime, m_DeptId);
+		}
+		else if (m_DeptId == 2)
+		{
+			student = new StudyCommissioner(m_Name, m_Age, m_Sex, m_ID, m_StudentID, m_AdmissionTime, m_DeptId);
+		}
+		else if (m_DeptId == 3)
+		{
+			student = new TuanZhishu(m_Name, m_Age, m_Sex, m_ID, m_StudentID, m_AdmissionTime, m_DeptId);
+		}
+		else
+		{
+			student = new Student(m_Name, m_Age, m_Sex, m_ID, m_StudentID, m_AdmissionTime, m_DeptId);
+		}
+		this->m_StuArray[index] = student;
+		index++;
+	}
 }
 
 StudentManager::~StudentManager()
